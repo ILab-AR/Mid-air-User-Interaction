@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<title>Mid-air Fingertip-based User Interaction in MR</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#a90329">
+	<link rel="stylesheet" type="text/css" href="handgestar_stylesheets/normalize.css" media="screen">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="handgestar_stylesheets/stylesheet.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="handgestar_stylesheets/github-light.css" media="screen">
+	<link rel="shortcut icon" href="handgestar_img/favicon.ico" />
+	<script type="text/javascript" async
+	  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+	<!-- <script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-101653083-3', 'auto');
+		ga('send', 'pageview');
+	</script> -->
+</head>
+
+<body>
+	<section class="page-header">
+		<h1 class="project-name">Mid-air Fingertip-based User Interaction in MR</h1>
+		<h2 class="project-tagline">Mid-air Fingertip-based User Interaction in MR</h2>
+<!-- 		<h2 class="project-authors"><a class = ".a_light" href="https://www.linkedin.com/in/neel-rakholia/"><b>Neel Rakholia\(^*\)</b></a> ,<a href="http://home.iiitd.edu.in/~srinidhi13164/"><b>Srinidhi Hegde\(^*\)</b></a>, <a href="https://scholar.google.co.in/citations?user=IJjnjZIAAAAJ&hl=en"><b>Ramya Hebbalaguppe</b></a></h2> -->
+		<a href="#video1" class="btn">Demo Video</a>
+		<!-- <a href="#video2" class="btn">Demo Video 2</a>
+		<a href="https://github.com/handgestar/EgoGestAR" target="_blank" class="btn">EgoGestAR Dataset and Codebase</a>
+		 <a href="https://github.com/handgestar/HandGestAR" target="_blank" class="btn">Videos Dataset for Testing</a>-->
+	</section>
+
+	<section class="main-content">
+		<h3><a id="welcome-to-handgestar" class="anchor" href="#welcome-to-handgestar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abstract</h3>
+		<p align="justify"> With data growing at a huge rate, there arises a need for advanced
+data visualization techniques. Visualizing these data sets in Mixed
+Reality(MR) mode provides an immersive experience to the user
+in the context of the real world applications. Most of the existing
+works can only be used with inordinately priced devices such as
+Microsoft HoloLens, Meta Glass that use proprietary hardware for
+data visualization and user interaction through hand gestures. In this
+paper, we demonstrate a cost-effective solution for data visualization
+using frugal devices such as Google Cardboard, VR Box etc in MR
+mode. However, these devices still employ only primitive modes of
+interaction such as the magnetic trigger, conductive lever and have
+a limited user-input capability. To interact with visualizations and
+facilitate rich user experience, we propose the use of intuitive point-
+ing fingertip gestural interface in the user’s Field of View(FoV). The
+proposed pointing hand gesture recognition framework is driven by
+cascade of state-of-the-art models - Faster RCNN for localizing the
+hand followed by a proposed regression CNN for fingertip localiza-
+tion. We also demonstrate the performance of our proposed method
+in terms of recognition accuracy and computational time. A user
+study is also conducted and reported to demonstrate the user comfort
+and effectiveness in using the interactive interface developed. </p>
+
+		<p><img src="handgestar_img/showimg.png"></p>
+
+		<h3><a id="welcome-to-handgestar" class="anchor" href="#welcome-to-handgestar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Key Contribution</h3>
+		<ol>
+			<li> We explored the potential of <i> finger tracking </i> for canonical operations like translation, rotation and scaling.
+			<li> Introduction of  <i> visualisation </i> of big data and inculcating virtual button overlays in stereoscopic view for some other serious tasks
+			
+		</ol>
+
+		<h3><a id="the-idea" class="anchor" href="#the-idea" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Idea</h3>
+
+		<!-- https://handgestar.github.io/ -->
+		
+		<p align="justify"> In this work, we present a neural network architecture comprising of a hand detection model followed by a Fingertip detection model. The Fingertip detection model output spatial location of fingertip. The details of the CNN + Fingertip detection Model network is mentioned in the figure below.
+			<!-- $$\begin{equation}
+		<p><img src="handgestar_img/pipeline.png"></p> https://handgestar.github.io/ -->
+		<p><img src="handgestar_img/drawinair_pipeline.png"></p>
+		
+		
+		<p>Figure below shows the overview of our proposed <em>fingertip regressor</em> architecture for fingertip localization. The input to the network is  3x99x99 sized RGB images. The proposed architecture consists of two convolutional blocks
+each with three convolutional layers followed by a max-pooling
+layer. Finally, we use three fully connected layers to regress over
+two coordinate values of fingertip point at the last layer. Since the
+aim is to determine continuous valued outputs corresponding to
+fingertip positions.</p>
+		<p><img src="handgestar_img/fcn_dsnt.png"></p>
+
+		
+
+		<p align="justify"></p>
+
+
+		<!-- Video for project -->
+		<h3><a id="video1" class="anchor" href="#video1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo Video</h3>
+		<div class="video-responsive">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/nGYor0bGXdc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		</div>
+	</section>
+
+</body>
+</html>
